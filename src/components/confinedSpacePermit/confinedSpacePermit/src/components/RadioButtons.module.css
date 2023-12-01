@@ -1,0 +1,16 @@
+.inputMargin {
+  margin-left: 2%;
+}
+
+.widthAndHeight {
+  width: 99%;
+  height: 100px;
+}
+
+.padding {
+  padding: 1%;
+}
+
+.borderAllAround {
+  border: 2px solid black;
+}

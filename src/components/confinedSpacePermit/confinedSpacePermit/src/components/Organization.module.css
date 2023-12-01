@@ -1,0 +1,25 @@
+.authorized {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.border {
+  width: 19.4%;
+  border: 2px solid black;
+  border-top: none;
+  border-left: none;
+}
+
+.borderRow {
+  border: 2px solid black;
+  border-top: none;
+}
+
+.normalPadding {
+  padding: 5px;
+}
+
+.borderAllAround {
+  border: 2px solid black;
+}

@@ -1,0 +1,16 @@
+.border {
+  border: 2px solid black;
+  border-top: none;
+}
+
+.normalPadding {
+  padding: 5px;
+}
+
+.background {
+  background-color: #3085c3;
+}
+
+.textColor {
+  color: #fffd8c;
+}

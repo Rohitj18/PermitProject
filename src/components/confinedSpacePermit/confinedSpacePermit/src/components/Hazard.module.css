@@ -1,0 +1,38 @@
+.halfAdj {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid black;
+}
+
+.borderLeftRight {
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.border_right {
+  border-right: 2px solid black;
+}
+
+.half {
+  width: 50%;
+}
+
+.flex {
+  display: flex;
+}
+
+.padding {
+  padding: 1%;
+}
+
+.paddingText {
+  padding: 50px;
+}
+
+.size {
+  height: 150px;
+}
+
+.borderAllAround {
+  border: 2px solid black;
+}

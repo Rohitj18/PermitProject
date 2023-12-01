@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.border {
+  border: 2px solid black;
+  border-top: none;
+}
+
+.space {
+  padding: 50px;
+}
+
+.size {
+  width: 20%;
+}
+
+.join {
+  width: 80%;
+}
+
+.textarea {
+  width: 99.4%;
+  height: 95%;
+}
+
+.activity {
+  display: flex;
+}
+
+.duration {
+  display: flex;
+  flex-direction: row;
+}
+
+.elements {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-left: none;
+}
+
+.entrySpace {
+  width: 50%;
+  border-right: none;
+}
+.personInCharge {
+  width: 50%;
+}
+
+.entrySpaceAndPersonInCharge {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputEntry {
+  width: 70%;
+}
+
+.inputPerson {
+  width: 60%;
+}
+
+.borderBottom {
+  border-bottom: 2px solid black;
+}
+
+.width {
+  width: 20%;
+}
+.inputMargin {
+  margin: 2%;
+}
+
+.borderAllAround {
+  border: 2px solid black;
+}

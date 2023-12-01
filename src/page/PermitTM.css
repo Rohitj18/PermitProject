@@ -1,0 +1,43 @@
+.permitc{
+    width: 80vw;
+    height: 100vh;
+    align-content: center;
+    margin-left: 10vw;
+}
+
+table {
+    table-layout: auto;
+    width: 100%;
+    border: 1px solid #b3adad;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+table th {
+    border: 1px solid #b3adad;
+    padding: 5px;
+    text-align: left;
+    background: #ffffff;
+    color: #313030;
+}
+
+table td {
+    border: 1px solid #b3adad;
+    text-align: left;
+    padding: 5px;
+    background: #ffffff;
+    color: #313030;
+}
+
+.input1{
+    width: 95%;
+    word-wrap: break-word;
+}
+
+.input1[type="number"]::-webkit-inner-spin-button {
+     display: none;
+}
+
+.b1{
+    margin-left: 600px;
+}

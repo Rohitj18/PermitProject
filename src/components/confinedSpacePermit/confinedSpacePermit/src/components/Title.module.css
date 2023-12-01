@@ -1,0 +1,14 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.color {
+  color: black;
+}
+
+.position {
+  display: flex;
+  align-items: flex-end;
+}
