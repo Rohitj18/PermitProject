@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import BasicInfo from "./components/BasicInfo";
 import Communication from "./components/Communication";
@@ -11,16 +11,12 @@ import Personnel from "./components/Personnel";
 import Testing from "./components/Testing";
 import Title from "./components/Title";
 import styles from "./App.module.css";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 export default function ConfinedSpacePermit() {
-
   let { id } = useParams();
-    
-    console.log("This is userid in permit",id);
 
-    
-  
+  console.log("This is userid in permit", id);
 
   // Header
   const [departmentName, setDepartmentName] = useState("");
@@ -35,8 +31,8 @@ export default function ConfinedSpacePermit() {
   const [jobLocation, setJobLocation] = useState("");
   const [dateStart, setDateStart] = useState(new Date());
   const [dateEnd, setDateEnd] = useState(new Date());
-  const [timeStart, setTimeStart] = useState("");
-  const [timeEnd, setTimeEnd] = useState("");
+  const [timeStart, setTimeStart] = useState(0);
+  const [timeEnd, setTimeEnd] = useState(0);
 
   // Part 2 -> Personnel
   const [aaName1, setaaName1] = useState("");
@@ -129,7 +125,7 @@ export default function ConfinedSpacePermit() {
       personInCharge2,
       permitno: permitNo,
       jobLocation,
-      durationPermit: { dateStart, dateEnd },
+      durationPermit: { dateStart, dateEnd, timeStart, timeEnd },
     };
     // Part 2 -> Personnel
     const part2 = {
@@ -181,21 +177,38 @@ export default function ConfinedSpacePermit() {
     };
     // Part 8 -> Permit Close
     const part8 = { permissionWithdraw: permitClose };
+    const requestData = {
+      header: headerData,
+      part1: part1,
+      part2: part2,
+      part3: part3,
+      part5: part5,
+      part6: part6,
+      part7: part7,
+      part8: part8,
+    };
     console.log("submmited formed");
-    const res = await fetch("http://localhost:4000/api/v1/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        header: headerData,
-        part1: part1,
-        part2: part2,
-        part3: part3,
-        part5: part5,
-        part6: part6,
-        part7: part7,
-        part8: part8,
-      }),
-    });
+    // const res = await fetch("http://localhost:4000/api/v1/submit", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     header: headerData,
+    //     part1: part1,
+    //     part2: part2,
+    //     part3: part3,
+    //     part5: part5,
+    //     part6: part6,
+    //     part7: part7,
+    //     part8: part8,
+    //   }),
+    // });
+    const res = await axios.post(
+      "http://localhost:4000/api/v1/submit",
+      requestData,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     // Headers
     setDepartmentName("");
     setPersonInCharge1("");
@@ -265,18 +278,16 @@ export default function ConfinedSpacePermit() {
     // Part-8
     setPermitClose(false);
 
-    const data = await res.json();
-    console.log("Sucessfull");
-    console.log(data);
+    //const data = await res.json();
+    //console.log("Sucessfull");
+    console.log(res);
   }
 
-  useEffect(()=>{
-        
-    if(id){
+  useEffect(() => {
+    if (id) {
       handleGetRequest();
     }
-  },[])
-
+  }, []);
 
   async function handleGetRequest(e) {
     e.preventDefault();
@@ -295,7 +306,10 @@ export default function ConfinedSpacePermit() {
     // Axios Request
     console.log("Working!!");
     try {
-      const res = await axios.post("http://localhost:4000/api/v1/getRequest",{id:id});
+      const res = await axios.post("http://localhost:4000/api/v1/getRequest", {
+        id: id,
+      });
+      // const res = await axios.get("http://localhost:4000/api/v1/getRequest");
       console.log(res.data);
       const responseData = res.data;
       // Headers

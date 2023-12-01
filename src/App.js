@@ -16,8 +16,11 @@ function App() {
       <Route path="/Dashboard" element={<Dashboad />} />
       <Route path="/formpending" element={<Dashboad />} />
       <Route path="/confinedSpacePermit" element={<ConfinedSpacePermit />} />
-      <Route path="/confinedSpacePermit" element={<ConfinedSpacePermit />} />
-      <Route path="/permitToMove/:id1?/:id?" element={<PermitTM/>} />
+      <Route
+        path="/confinedSpacePermit/:id"
+        element={<ConfinedSpacePermit />}
+      />
+      <Route path="/permitToMove/:id1?/:id?" element={<PermitTM />} />
 
       {/* <Route path="/Dashboard" element={<Dashboad/>}/> */}
       <Route path="/" element={<Login />} />
